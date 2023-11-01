@@ -16,6 +16,8 @@ Here's a preview of what it looks like. Feel free to customize the CSS!
 
 Copy all ".php" and ".css" files to your server. Create `alt`, `image`, and `title` directories. Edit the `config.php` file with your details. Set the `license` field to the license of your images.
 
+Need dummy data? Run `python3 download-xkcd.py`! Just make sure to comply with XKCD's license.
+
 When you have a new image, name it `0.png`, `1.png`, `2.png`, etc and place them in the `image` folder. Create files `0.txt`, `1.txt`, `2.txt`, etc and place them in the `title` folder. These will be the titles of the images you place in the `image` folder under the same filename. Optionally, you can also create `.txt` files in the `alt` directory to add captions.
 
 ## Todo
