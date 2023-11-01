@@ -1,6 +1,6 @@
 # Image Gallery
 
-A super simple image gallery for your webcomic, photos, and more. Inspired + dummy data by XKCD. Written in PHP.
+A super simple image gallery for your webcomic, photos, and more. Inspired + dummy data by XKCD. Written in PHP. Open an Issue if you use this software if you want it to be featured here!
 
 ## Features
 
