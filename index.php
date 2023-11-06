@@ -41,25 +41,22 @@ if (file_exists("alt/$id.txt")) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=htmlspecialchars($title)?> - Arctangent</title>
     <link rel="stylesheet" href="main.css">
-    <!-- Primary Meta Tags -->
-<title>Meta Tags — Preview, Edit and Generate</title>
-<meta name="title" content="<?=htmlspecialchars($title)?> - Arctangent" />
-<?php if ($alt): ?>
-<meta name="description" content="<?=htmlspecialcharcs($alt)?>" />
-<?php endif; ?>
-
-<meta property="og:type" content="website" />
-<meta property="og:title" content="<?=htmlspecialchars($title)?> - Arctangent" />
-<?php if ($alt): ?>
-<meta property="og:description" content="<?=htmlspecialcharcs($alt)?>" />
-<?php endif; ?>
-<meta property="og:image" content="<?=htmlspecialchars($url)?>image/<?=$id?>.png" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="<?=htmlspecialchars($title)?> - Arctangent" />
-<?php if ($alt): ?>
-<meta property="twitter:description" content="<?=htmlspecialchars($alt)?>" />
-<?php endif; ?>
-<meta property="twitter:image" content="<?=htmlspecialchars($url)?>image/<?=$id?>.png" />
+    <meta name="title" content="<?=htmlspecialchars($title)?> - Arctangent" />
+    <?php if ($alt): ?>
+    <meta name="description" content="<?=htmlspecialcharcs($alt)?>" />
+    <?php endif; ?>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<?=htmlspecialchars($title)?> - Arctangent" />
+    <?php if ($alt): ?>
+    <meta property="og:description" content="<?=htmlspecialcharcs($alt)?>" />
+    <?php endif; ?>
+    <meta property="og:image" content="<?=htmlspecialchars($url)?>image/<?=$id?>.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="<?=htmlspecialchars($title)?> - Arctangent" />
+    <?php if ($alt): ?>
+    <meta property="twitter:description" content="<?=htmlspecialchars($alt)?>" />
+    <?php endif; ?>
+    <meta property="twitter:image" content="<?=htmlspecialchars($url)?>image/<?=$id?>.png" />
 </head>
 <body>
     <main>
