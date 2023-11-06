@@ -17,7 +17,11 @@ if (isset($_REQUEST['id'])) {
     $nextId = ($nextKey !== null) ? intval(pathinfo(basename($files[$nextKey]), PATHINFO_FILENAME)) : null;
 } else {
     $id = intval(pathinfo(basename($files[0]), PATHINFO_FILENAME));
-    $prevId = intval(pathinfo(basename($files[1]), PATHINFO_FILENAME));
+    if (isset($files[1])) {
+        $prevId = intval(pathinfo(basename($files[1]), PATHINFO_FILENAME));
+    } else {
+        $prevId = null;
+    }
     $nextId = null;
 }
 $rand = intval(pathinfo(basename($files[array_rand($files)]), PATHINFO_FILENAME));
@@ -35,8 +39,27 @@ if (file_exists("alt/$id.txt")) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?=$title?></title>
+    <title><?=htmlspecialchars($title)?> - Arctangent</title>
     <link rel="stylesheet" href="main.css">
+    <!-- Primary Meta Tags -->
+<title>Meta Tags — Preview, Edit and Generate</title>
+<meta name="title" content="<?=htmlspecialchars($title)?> - Arctangent" />
+<?php if ($alt): ?>
+<meta name="description" content="<?=htmlspecialcharcs($alt)?>" />
+<?php endif; ?>
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="<?=htmlspecialchars($title)?> - Arctangent" />
+<?php if ($alt): ?>
+<meta property="og:description" content="<?=htmlspecialcharcs($alt)?>" />
+<?php endif; ?>
+<meta property="og:image" content="<?=htmlspecialchars($url)?>image/<?=$id?>.png" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="<?=htmlspecialchars($title)?> - Arctangent" />
+<?php if ($alt): ?>
+<meta property="twitter:description" content="<?=htmlspecialchars($alt)?>" />
+<?php endif; ?>
+<meta property="twitter:image" content="<?=htmlspecialchars($url)?>image/<?=$id?>.png" />
 </head>
 <body>
     <main>
@@ -44,7 +67,7 @@ if (file_exists("alt/$id.txt")) {
         <p><b><?=htmlspecialchars($desc)?></b></p>
     </main>
     <main>
-        <h2><?=$title?></h2>
+        <h2><?=htmlspecialchars($title)?></h2>
         <?php if ($prevId !== null): ?>
             <a href="?id=<?=$prevId?>" class="prev gobtn">Prev</a>
         <?php endif; ?>
@@ -55,11 +78,11 @@ if (file_exists("alt/$id.txt")) {
         <p></p>
         <img src="image/<?=$id?>.png" class="img">
         <?php if ($alt): ?>
-            <p><?=$alt?></p>
+            <p><?=htmlspecialchars($alt)?></p>
         <?php endif; ?>
     </main>
     <main>
-        <p>&copy; 2023. All rights reserved. License: <?=htmlspecialchars($license)?>. Powered by free software! Check out <a href="https://github.com/fakerybakery/imagegallery">Image Gallery</a>. <a href="rss.php">RSS Feed</a></p>
+        <p>&copy; 2023. All rights reserved. License: <?=htmlspecialchars($license)?>. Powered by <a href="https://github.com/fakerybakery/imagegallery">Image Gallery</a>. <a href="rss.php">RSS Feed</a></p>
     </main>
 </body>
 </html>
