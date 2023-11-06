@@ -11,6 +11,7 @@ Here's a preview of what it looks like. Feel free to customize the CSS!
 * No databases
 * PHP-based
 * Includes RSS feed
+* Includes OG/Meta tags
 
 ## Get Started
 
